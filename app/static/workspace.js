@@ -1,5 +1,6 @@
 import {query, readInput, encodeInput} from './api.js';
 import {el, evidence, table} from './table.js';
+import {mount as mountCorrections, activate as activateCorrections} from './correction.js';
 
 const byId = id => document.getElementById(id);
 const settings = JSON.parse(byId('settings').textContent);
@@ -106,6 +107,9 @@ async function render() {
   const stage = selected;
   byId('phase').textContent = settings.tabs[stage];
   byId('review').hidden = true;
+  const correctionStage = stage === 'corrections';
+  activateCorrections(correctionStage);
+  if (correctionStage) return;
   for (const link of links) {
     if (link.dataset.module === stage) link.setAttribute('aria-current', 'page');
     else link.removeAttribute('aria-current');
@@ -257,3 +261,4 @@ byId('review').addEventListener('submit', async event => {
   }
 });
 render();
+mountCorrections();

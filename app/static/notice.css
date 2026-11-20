@@ -129,3 +129,13 @@ td details { min-width: 5em; margin-top: 4px; color: var(--muted); border-left: 
   .scroll, #signal { overflow: visible; max-height: none; }
   thead { display: table-header-group; }
 }
+
+#correction-desk { margin-top: var(--gap); }
+.corr-slot { border: 1px solid #c5ac67; border-radius: 4px; margin: 8px 0; padding: 8px 10px; }
+.corr-slot legend { padding: 0 5px; font-weight: 700; color: #634b0c; }
+.corr-slot label { display: block; margin-block: 5px; }
+.corr-slot label span { display: block; font-size: 12px; color: var(--muted); }
+.corr-slot input { width: 100%; }
+.corr-verdict { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding: 10px 13px; border-bottom: 1px dashed var(--line-strong); font-weight: 700; }
+#corr-signal dt { font-weight: 650; }
+#corr-signal dd { color: var(--accent); font-variant-numeric: tabular-nums; }

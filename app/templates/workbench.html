@@ -59,6 +59,36 @@
       <div class="panel__head"><h2>户与面积双计</h2><span class="num" id="evidence-key"></span></div>
       <div class="panel__body" id="signal" aria-live="polite"><p class="empty">选择一条复算记录</p></div>
     </article></div>
+    <div class="grid" id="correction-desk" hidden>
+      <section class="panel source" aria-labelledby="correction-input-title">
+        <div class="panel__head"><h2 id="correction-input-title">产权更正录入</h2><small>原票 + 两份互斥更正</small></div>
+        <form id="correction-form" class="panel__body">
+          <label>表决议案 <input id="corr-key" maxlength="80" required></label>
+          <div id="corr-slots"></div>
+          <details><summary>外部账（可选，默认随附样例）</summary>
+            <label>外部账 <input id="corr-book-file" type="file" accept=".csv,text/csv"></label>
+            <textarea id="corr-book-csv" aria-label="外部账 CSV" rows="3"></textarea>
+          </details>
+          <div class="actions"><button type="submit" class="btn btn--primary">双路复算并对账</button>
+          <button type="button" id="corr-demo" class="btn">载入互斥更正样例</button></div>
+          <output id="corr-notice" role="status"></output>
+        </form>
+      </section>
+      <section class="panel results" aria-labelledby="correction-phase">
+        <div class="panel__head"><h2 id="correction-phase">更正双路结果</h2><span class="num" id="corr-run-id"></span></div>
+        <div class="scroll" id="corr-grid"><p class="empty">录入原票与两份产权更正后运行双路复算</p></div>
+        <form id="corr-review" class="panel__body" hidden>
+          <label>复核意见 <textarea id="corr-review-note" maxlength="500" rows="2"></textarea></label>
+          <div class="actions"><label>结论 <select id="corr-decision"><option>确认</option><option>留待核实</option></select></label>
+          <button class="btn btn--primary" type="submit">提交复核</button>
+          <a class="btn" id="corr-export" download>导出证据</a></div>
+        </form>
+      </section>
+      <article class="panel signal" data-instrument="threshold">
+        <div class="panel__head"><h2>三路依据对照</h2><span class="num" id="corr-evidence-key"></span></div>
+        <div class="panel__body" id="corr-signal" aria-live="polite"><p class="empty">运行后查看原票与两份更正的面积、人数依据</p></div>
+      </article>
+    </div>
       </main>
       <footer class="statusbar"><span id="state" role="status">等待输入</span><a href="/openapi.json">接口</a><span>UTC</span></footer>
     </div>

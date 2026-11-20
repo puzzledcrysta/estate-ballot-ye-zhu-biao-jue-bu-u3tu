@@ -42,4 +42,5 @@ export function table(target, columns, rows) {
   }
   root.append(head, body);
   target.replaceChildren(root);
+  return root;
 }

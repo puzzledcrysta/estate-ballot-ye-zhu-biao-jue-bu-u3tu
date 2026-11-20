@@ -12,3 +12,12 @@ REASONS = {
 }
 
 REASONS.update({'ESTATE_TITLE': '产权定义无效', 'ESTATE_SHARE': '产权份额不符', 'ESTATE_KIND': '议案类别无效', 'ESTATE_BALLOT': '表决票无效', 'ESTATE_CONFLICT': '表决票冲突', 'DATE': '日期格式无效', 'REV_BLOCKED': '较新来源尚未采信'})
+
+REASONS.update({
+    'CORRECTION_FORM': '更正录入不完整',
+    'CORRECTION_SAME': '两份更正内容完全相同，不构成互斥更正',
+    'CORRECTION_KEY': '两份更正必须针对同一表决议案',
+    'CORRECTION_FLIP': '更正后议案结论由通过变为未通过，须留待核实',
+    'CORRECTION_QUARANTINE': '存在无法计票的更正，须留待核实',
+    'CORRECTION_REVIEW': '当前结论状态不允许该复核结论',
+})

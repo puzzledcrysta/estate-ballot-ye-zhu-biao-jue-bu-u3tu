@@ -13,6 +13,15 @@ CREATE TABLE IF NOT EXISTS reviews (
   decision TEXT NOT NULL, note TEXT NOT NULL, changed TEXT NOT NULL,
   PRIMARY KEY(run_id,version)
 );
+CREATE TABLE IF NOT EXISTS corrections (
+  id TEXT PRIMARY KEY, package BLOB NOT NULL, book BLOB NOT NULL,
+  result TEXT NOT NULL, created TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS correction_reviews (
+  correction_id TEXT NOT NULL REFERENCES corrections(id), version INTEGER NOT NULL,
+  decision TEXT NOT NULL, note TEXT NOT NULL, changed TEXT NOT NULL,
+  PRIMARY KEY(correction_id,version)
+);
 """
 
 
